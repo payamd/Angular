@@ -8,7 +8,14 @@ const userIndex = Math.floor(Math.random() * DUMMY_USERS.length);
   styleUrl: './user.component.css'
 })
 export class UserComponent {
-  selectedUser = DUMMY_USERS[userIndex];
 
+  selectedUser = DUMMY_USERS[userIndex];
+  get imagepath() {
+    return 'assets/users/' + this.selectedUser.avatar;
+  }
+
+  onSelectItem() {
+  console.log('Selected user:', this.selectedUser);
+  }
 
 }
